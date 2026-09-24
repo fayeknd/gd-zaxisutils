@@ -1,0 +1,29 @@
+{
+	"geode": "5.10.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "fayeknd.zaxis",
+	"name": "Z-Axis API",
+	"version": "v1.0.0",
+	"developer": "fayeknd",
+	"description": "An API that allows easy true 3D rendering.",
+	"dependencies": {
+		"geode.node-ids": ">=v1.23.3",
+		"geode.devtools": {
+			"version": "v1.14.0",
+			"required": false
+		}
+	},
+	"resources": {
+		"sprites" : [
+			"resources/*.png"
+		],
+		"files": [
+			"resources/shaders/*.glsl"
+		]
+	}
+}

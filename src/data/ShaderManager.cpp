@@ -3,6 +3,11 @@
 
 using namespace zaxis;
 
+// https://github.com/fayeknd/Application/blob/main/Application/Shader.cpp
+// actually based roughly on my (FIRST!!!! DON'T JUDGE!!) c++ / opengl program
+
+// TODO : log any glsl compiler errors (does cocos check for any compilation errors?)
+
 CCGLProgram* ShaderManager::getOrCreateShaderFromFile(const char* vert, const char* frag, const char* shaderName) {
     CCGLProgram* shader = CCShaderCache::sharedShaderCache()->programForKey(shaderName);
     if (shader) return shader;

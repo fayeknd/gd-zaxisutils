@@ -8,6 +8,10 @@ void CCNode3D::addToScene(GDScene3D* scn) {
     this->m_scene = scn;
 }
 
+// kmMat4Skew() or anything similar seems to just not exist?
+// I can't figure out how the game itself skews stuff, but
+// this is probably just as efficient
+
 void CCNode3D::_Mat4Skew3D(kmMat4* pOut, float x, float y, float zx, float zy)  {
     kmMat4Identity(pOut);
     
@@ -100,6 +104,17 @@ void CCNode3D::setSkew(kmVec3 v) {
     m_fSkewZ = v.z;
     m_bTransformDirty = true;
 }
+
+// TODO
+
+// i really, really dislike kazmath. 
+// could instead use glm, or implement some stuff from this
+// https://github.com/fayeknd/Application/blob/main/Application/Matrix4x4.h
+// the benefit of this is most stuff almost worked and i am also generally
+// better at programming and matrix-based maths than i was then. 
+// plus would be fun ig.
+
+// cause like its just so weird i mean look at all that
 
 void CCNode3D::transform3D() {
 

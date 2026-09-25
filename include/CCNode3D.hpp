@@ -7,6 +7,8 @@ namespace zaxis {
     class CCNode3D : public cocos2d::CCNode {
     protected:
 
+        // this is KIND of weird, but you also get to keep all the cool ccnode stuff like autorelease so its okay really 
+
         float m_fRotationZ = 0;
         float m_fScaleZ = 1;
         float m_fPositionZ = 0;

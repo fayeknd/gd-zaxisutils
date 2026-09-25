@@ -22,13 +22,13 @@ bool MenuGameLayerHook::init() {
     addChild(scene);
 
     GDMeshInstance3D* node = GDMeshInstance3D::create(ZAxisAPI_Cube, ZAxisAPI_StandardMaterial);
-    node->setID("doom-render-node"_spr);
+    node->setID("mesh-node"_spr);
     node->setPosition({5, 0, -10});
     node->setScale({3, 3, 3});
     node->addToScene(scene);
 
     GDMeshInstance3D* node2 = GDMeshInstance3D::create(ZAxisAPI_Cube, "new-material");
-    node2->setID("doom-render-node-2"_spr);
+    node2->setID("mesh-node-2"_spr);
     node2->setPosition({-5, 0, -10});
     node2->setScale({3, 3, 3});
     node2->addToScene(scene);

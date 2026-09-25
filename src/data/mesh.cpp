@@ -57,6 +57,8 @@ std::shared_ptr<GD3DMesh> GD3DMesh::createMeshWithData(std::vector<Vertex>* vert
     return mesh;
 }
 
+// not an enum because it'll eventually support mod resource models
+
 std::shared_ptr<GD3DMesh> GD3DMesh::createPrimitiveMesh(const char* mesh) {
     if (strcmp(mesh, ZAxisAPI_Plane) == 0) {
         return PrimitiveGenerator::get().getPlanePrimitive();

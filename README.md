@@ -1,5 +1,6 @@
 # ZAxisUtils
 
+* logo not final lol
 <img src="logo.png" width="150" alt="the mod's logo" />
 
 ## A utility mod specifically for rendering 3D objects!

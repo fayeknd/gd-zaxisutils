@@ -15,7 +15,7 @@ Creating a generic Cube mesh inside a GDScene3D looks like this:
 > scene->setID("my-3d-scene"_spr);
 > someHookedLayer->addChild(scene);
 
-> auto cube = GDMeshInstance3D::create(ThreeDeeAPI_Cube);
+> auto cube = GDMeshInstance3D::create(ZAxisAPI_Cube);
 > cube->setID("my-cube"_spr);
 > cube->setPositionZ(-5); *// move the cube back slightly*
 > cube->addToScene(scene);

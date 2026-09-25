@@ -1,23 +1,27 @@
-# zaxisutils
-This is where she makes a mod.
+# ZAxisUtils
 
 <img src="logo.png" width="150" alt="the mod's logo" />
 
-*Update logo.png to change your mod's icon (please)*
+## A utility mod specifically for rendering 3D objects!
+This mod is effectively a lightweight 3D Renderer taking advantage of the game's **OpenGL context**.
+3D meshes can be displayed on a **zaxis::GDScene3D** node. the Scene3D is effectively a camera with a render texture attached.
+Multiple Scene3Ds can exist, with their own nodes.
 
-## Getting started
-We recommend heading over to [the getting started section on our docs](https://docs.geode-sdk.org/getting-started/) for useful info on what to do next.
+## GDMeshInstance3D and CCNode3D
+**CCNode3D** is an extension of **CCNode** which adds several Z-Components. (Position, Rotation, Scale, Skew).
+**GDMeshInstance3D** inherits a CCNode3D and can be placed inside a GDScene3D via **meshInstance->addToScene(scene)**.
+It is important to note that **scene->addChild(meshInstance)** will not pass the scene pointer to the meshInstance, 
+which is required.
 
-## Build instructions
-For more info, see [our docs](https://docs.geode-sdk.org/getting-started/create-mod#build)
-```sh
-# Assuming you have the Geode CLI set up already
-geode build
-```
+Creating a generic Cube mesh inside a GDScene3D looks like this:
+> auto scene = GDScene3D::create({320, 180}); *// 320x180 will be the render resolution. Leave blank for window size (eg. 1920x1080)*
+> scene->setID("my-3d-scene"_spr);
+> someHookedLayer->addChild(scene);
 
-# Resources
-* [Geode SDK Documentation](https://docs.geode-sdk.org/)
-* [Geode SDK Source Code](https://github.com/geode-sdk/geode/)
-* [Geode CLI](https://github.com/geode-sdk/cli)
-* [Bindings](https://github.com/geode-sdk/bindings/)
-* [Dev Tools](https://github.com/geode-sdk/DevTools)
+> auto cube = GDMeshInstance3D::create(ZAxisAPI_Cube);
+> cube->setID("my-cube"_spr);
+> cube->setPositionZ(-5); *// move the cube back slightly*
+> cube->addToScene(scene);
+
+> scene->m_camera.setRotationX(-35);
+> scene->m_camera.setPositionY(3); *// camera looking down at cube*
